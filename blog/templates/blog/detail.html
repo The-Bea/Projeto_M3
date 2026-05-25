@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post-card">
+        <h1>{{ post.titulo }}</h1>
+        <small>Publicado em: {{ post.data_criacao|date:"d/m/Y H:i" }}</small>
+        <hr>
+        <p style="line-height: 1.6; font-size: 1.1em;">{{ post.conteudo }}</p>
+        <br>
+        <a href="{% url 'home' %}">← Voltar para a Home</a>
+    </div>
+{% endblock %}
