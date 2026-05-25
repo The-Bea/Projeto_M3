@@ -1,11 +1,16 @@
 import pytest
-from blog.factories import PostFactory
+from django.urls import reverse
 
 @pytest.mark.django_db
-def test_criar_post_com_factory():
-    # Usando a factory para criar um post no banco de dados de teste
-    post = PostFactory(titulo="Meu Primeiro Projeto")
+def test_home_view_retorna_status_200_e_hello_world(client):
 
-    assert post.id is not None
-    assert post.titulo == "Meu Primeiro Projeto"
-    assert post.publicado is True
+    url = reverse('home')
+    
+
+    response = client.get(url)
+    
+
+    assert response.status_code == 200
+    
+
+    assert "Hello World" in response.content.decode('utf-8')
