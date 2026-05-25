@@ -16,20 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
-
-
-from product.views import ProductViewSet
-from category.views import CategoryViewSet
-from order.views import OrderViewSet
-
-
-router = routers.DefaultRouter()
-router.register(r'products', ProductViewSet)
-router.register(r'categories', CategoryViewSet)
-router.register(r'orders', OrderViewSet)
+from bookstore.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)), 
+    path('api/', include('bookstore.urls')), 
+    path('', home),
 ]
