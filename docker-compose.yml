@@ -12,6 +12,8 @@ services:
       - POSTGRES_PASSWORD=bookstore_pass
     ports:
       - "5432:5432"
+    networks:
+      - bookstore_network  
 
   web:
     build: .
@@ -29,6 +31,13 @@ services:
       - DB_PORT=5432
     depends_on:
       - db
+    networks:
+      - bookstore_network 
 
 volumes:
   postgres_data:
+
+
+networks:
+  bookstore_network:
+    driver: bridge
