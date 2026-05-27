@@ -1,6 +1,7 @@
 from django.test import TestCase
-from .serializers import BookSerializer
 from .factories import BookFactory
+from .serializers import BookSerializer
+
 
 class BookSerializerTest(TestCase):
     def test_serializer_contains_expected_fields(self):
@@ -10,7 +11,7 @@ class BookSerializerTest(TestCase):
 
         self.assertEqual(set(data.keys()), set(['id', 'title', 'author', 'price', 'edition']))
 
-        def test_serializer_with_invalid_data(self):
+    def test_serializer_with_invalid_data(self):
 
             invalid_data = {
                 'title': 'Livro Teste',
