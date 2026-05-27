@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Portfólio</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; background: #f4f4f9; color: #333; }
+        aside { width: 250px; background: #2c3e50; color: white; min-height: 100vh; padding: 20px; }
+        main { flex: 1; padding: 40px; }
+        .post-card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .post-card a { color: #2c3e50; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    {% include 'blog/sidebar.html' %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<div class="post-card">
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.titulo }}</a></h2>
+    <small>Postado em: {{ post.data_criacao|date:"d/m/Y" }}</small>
+    <p>{{ post.conteudo|truncatewords:30 }}</p>
+    <a href="{% url 'post_detail' pk=post.pk %}">Leia mais →</a>
+</div>
