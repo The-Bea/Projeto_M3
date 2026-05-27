@@ -1,0 +1,26 @@
+[project]
+name = "bookstore-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Beatriz",email = "beaa.devops@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "django (>=6.0.5,<7.0.0)",
+    "djangorestframework (>=3.17.1,<4.0.0)",
+    "factory-boy (>=3.3.3,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "bookstore_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "django-debug-toolbar (>=6.3.0,<7.0.0)"
+]
